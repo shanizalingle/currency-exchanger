@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Currency Exchanger</title>
+  </head>
+  <body>
+    <h1>Currency Exchanger</h1>
+
+    <form id="submit-form">
+      <label for="amount">Input Amount</label>
+      <input id="amount-input" type="text">
+
+      <label for="currencies">Currency</label>
+      <select id="currency">
+        <option value="Select"> --Select--</option>
+        <option value="CAD">Canadian Dollar (CAD)</option>
+        <option value="FJD">Fiji Dollar (FJD)</option>
+        <option value="AUD">Austrailian Dollar (AUD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Pound Sterling (GBP)</option>
+      </select>
+
+      <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+
+    <h2>Results: </h2>
+    <p id="converted-output"></p>
+
+  </body>
+</html>
