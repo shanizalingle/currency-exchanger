@@ -20,10 +20,12 @@ If the query response doesn't include that particular currency, the application 
 
 ## Setup/Installation Requirements
 
+* _Visit https://www.exchangerate-api.com and create an API key_
+* _Create an .env file and add "API_KEY= *your API key*"_
 * _Clone this repository into your desktop_
 * _Open the currency-exchanger directory_
-* _run "npm install"_
-* _run "npm run start"_
+* _Run "npm install"_
+* _Run "npm run start"_
 
 ## Known Bugs
 
