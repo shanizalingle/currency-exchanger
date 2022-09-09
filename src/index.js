@@ -19,12 +19,12 @@ function getCurrency(baseCurrency, newCurrency, amount) {
 // UI Logic
 
 function printElements(response, baseCurrency, newCurrency, amount) {
-    document.querySelector("p#output").innerText = `${amount} ${baseCurrency} in ${newCurrency} is ${response.conversion_result}`;
+  document.querySelector("p#output").innerText = `${amount} ${baseCurrency} in ${newCurrency} is ${response.conversion_result}`;
 }
 
 function printError(error, baseCurrency, newCurrency) {
   if (error.toString().includes("404")) {
-    document.querySelector("p#output").innerText = `${baseCurrency} or ${newCurrency} don't exist: ${error}`
+    document.querySelector("p#output").innerText = `${baseCurrency} or ${newCurrency} don't exist: ${error}`;
   } else {
     document.querySelector("p#output").innerText = `There was an error accessing the currency data for ${baseCurrency} or ${newCurrency}: ${error}`;
   }
@@ -36,10 +36,6 @@ function handleFormSubmission(event) {
   const newCurrency = document.querySelector("input#new-currency-input").value;
   const amount = document.querySelector("input#amount-input").value;
   getCurrency(baseCurrency, newCurrency, amount);
-  console.log(`amount: ${amount}`);
-  console.log(`base currency:  ${baseCurrency}`);
-  console.log(`new currency: ${newCurrency}`);
-  console.log(process.env.API_KEY);
 }
 
 window.addEventListener("load", function() {
