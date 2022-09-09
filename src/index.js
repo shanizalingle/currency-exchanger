@@ -19,25 +19,26 @@ function getCurrency(currency, amount) {
 // UI Logic
 
 function printElements(response, currency, amount) {
-  document.querySelector("#output").innerText = `$${amount} in ${currency} is
+  document.querySelector("p#output").innerText = `$${amount} in ${currency} is
   ${response.conversion_result}`;
 }
 
 function printError(error, currency) {
-  document.querySelector("#output").innerText = `There was an error accessing the currency data for ${currency}: 
+  document.querySelector("p#output").innerText = `There was an error accessing the currency data for ${currency}: 
   ${error}.`;
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const currency = document.querySelector("#currency").value;
-  const amount = document.querySelector("#amount-input").value;
-  document.querySelector('#currency').value = null;
+  const currency = document.querySelector("select#currency").value;
+  const amount = document.querySelector("input#amount-input").value;
+  document.querySelector("select#currency").value = null;
   getCurrency(currency, amount);
   console.log(`amount: ${amount}`);
   console.log(`currency: ${currency}`);
+  console.log(process.env.API_KEY);
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#submit-form").addEventListener("submit", handleFormSubmission);
+  document.querySelector("form#submit-form").addEventListener("submit", handleFormSubmission);
 });
