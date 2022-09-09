@@ -5,37 +5,37 @@ import CurrencyExchanger from './js/currency-exchanger';
 
 // Business Logic
 
-function getCurrency(currency, amount) {
-  CurrencyExchanger.getCurrency(currency, amount)
+function getCurrency(baseCurrency, newCurrency, amount) {
+  CurrencyExchanger.getCurrency(baseCurrency, newCurrency, amount)
     .then(function(response) {
       if (response.conversion_result) {
-        printElements(response, currency, amount);
+        printElements(response, baseCurrency,newCurrency, amount);
       } else {
-        printError(response, currency, amount);
+        printError(response, baseCurrency, newCurrency, amount);
       }
     });
 }
 
 // UI Logic
 
-function printElements(response, currency, amount) {
-  document.querySelector("p#output").innerText = `$${amount} in ${currency} is
-  ${response.conversion_result}`;
+function printElements(response, baseCurrency, newCurrency, amount) {
+  document.querySelector("p#output").innerText = `${amount} ${baseCurrency} in ${newCurrency} is ${response.conversion_result}`;
 }
 
-function printError(error, currency) {
-  document.querySelector("p#output").innerText = `There was an error accessing the currency data for ${currency}: 
-  ${error}.`;
+function printError(error, baseCurrency, newCurrency) {
+  document.querySelector("p#output").innerText = `There was an error accessing the currency data for ${baseCurrency} or ${newCurrency}: ${error}.`;
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const currency = document.querySelector("select#currency").value;
+  const baseCurrency = document.querySelector("input#base-currency-input").value;
+  const newCurrency = document.querySelector("input#new-currency-input").value;
   const amount = document.querySelector("input#amount-input").value;
-  document.querySelector("select#currency").value = null;
-  getCurrency(currency, amount);
+  document.querySelector("input#new-currency-input").value = null;
+  getCurrency(baseCurrency, newCurrency, amount);
   console.log(`amount: ${amount}`);
-  console.log(`currency: ${currency}`);
+  console.log(`base currency:  ${baseCurrency}`);
+  console.log(`new currency: ${newCurrency}`);
   console.log(process.env.API_KEY);
 }
 

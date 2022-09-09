@@ -10,15 +10,12 @@
       <label for="amount">Input Amount</label>
       <input id="amount-input" type="number">
 
-      <label for="currencies">Currency</label>
-      <select id="currency">
-        <option value="Select"> --Select--</option>
-        <option value="CAD">Canadian Dollar (CAD)</option>
-        <option value="FJD">Fiji Dollar (FJD)</option>
-        <option value="AUD">Austrailian Dollar (AUD)</option>
-        <option value="EUR">Euro (EUR)</option>
-        <option value="GBP">Pound Sterling (GBP)</option>
-      </select>
+      <label for="base-currency">Input Base Currency</label>
+      <input id="base-currency-input" type="text" value="USD" minlength="3" maxlength="3">
+
+      <label for="new-currency">Input New Currency</label>
+      <input id="new-currency-input" type="text" value="EUR" minlength="3" maxlength="3">
+    
 
       <button type="submit" class="btn btn-light">Submit</button>
     </form>

@@ -1,6 +1,6 @@
 export default class CurrencyExchanger {  
-  static getCurrency(currency, amount) {
-    return fetch(` https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${currency}/${amount}`)
+  static getCurrency(baseCurrency, newCurrency, amount) {
+    return fetch(` https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${baseCurrency}/${newCurrency}/${amount}`)
       .then(function(response) {
         if (!response.ok) {
           const errorMessage = `${response.status} ${response.statusText}`;
