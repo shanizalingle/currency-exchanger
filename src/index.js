@@ -19,7 +19,7 @@ function getCurrency(baseCurrency, newCurrency, amount) {
 // UI Logic
 
 function printElements(response, baseCurrency, newCurrency, amount) {
-  document.querySelector("p#output").innerText = `${amount} ${baseCurrency} in ${newCurrency} is ${response.conversion_result}`;
+  document.querySelector("p#output").innerText = `${amount} ${baseCurrency} equals \n ${response.conversion_result} ${newCurrency}`;
 }
 
 function printError(error, baseCurrency, newCurrency) {

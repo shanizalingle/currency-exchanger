@@ -4,24 +4,47 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-    <h1>Currency Exchanger</h1>
 
-    <form id="submit-form">
-      <label for="amount">Input Amount</label>
-      <input id="amount-input" type="number">
+    <div class="main-container">
+      <h1>Currency Exchanger</h1>
 
-      <label for="base-currency">Input Base Currency</label>
-      <input id="base-currency-input" type="text" value="USD" minlength="3" maxlength="3">
+      <form id="submit-form">
+        <div class="amount-container">
+          <input id="amount-input" type="number" placeholder=" Input Amount"><br>
+        </div>
 
-      <label for="new-currency">Input New Currency</label>
-      <input id="new-currency-input" type="text" value="EUR" minlength="3" maxlength="3">
+        <div class="currency-container">
+          <input id="base-currency-input" type="text" placeholder=" USD" minlength="3" maxlength="3">
+          <img src="./img/arrow-img.png" class="arrow-img" alt="arrow">
+          <input id="new-currency-input" type="text" placeholder=" EUR" minlength="3" maxlength="3"><br>
+        </div>
+
+        <button type="submit" class="button">Results</button>
+      </form>
+
+      <p id="output" class="output"></p>
+    </div>
+
+    <div class="popup-button-container">
+      <a class="popup-button" href="#popup1">?</a>
+    </div>
     
-
-      <button type="submit" class="btn btn-light">Submit</button>
-    </form>
-
-    <h2>Results: </h2>
-    <p id="output"></p>
-
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Supported Currencies</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <div class="row">
+            <div class="col-4 column">ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND BOB BRL BSD BTN BWP BYN BZD CAD CDF CHF CLP CNY COP CRC CUP CVE CZK DJF DKK DOP DZD EGP ERN ETB EUR FJD FKP FOK GBP GEL GGP GHS GIP GMD GNF GTQ GYD HKD HNL
+          </div> 
+            <div class="col-4 column">HRK HTG HUF IDR ILS IMP INR IQD IRR ISK JEP JMD JOD JPY KES KGS KHR KID KMF KRW KWD KYD KZT LAK LBP LKR LRD LSL LYD MAD MDL MGA MKD MMK MNT MOP MRU MUR MVR MWK MXN MYR MZN NAD NGN NIO NOK NPR NZD OMR PAB PEN PGK PHP PKR
+            </div>   
+            <div class="col-4 column">PLN PYG QAR RON RSD RUB RWF SAR SBD SCR SDG SEK SGD SHP SLE SOS SRD SSP STN SYP SZL THB TJS TMT TND TOP TRY TTD TVD TWD TZS UAH UGX USD UYU UZS VES VND VUV WST XAF XCD XDR XOF XPF YER ZAR ZMW ZWL
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
   </body>
 </html>
