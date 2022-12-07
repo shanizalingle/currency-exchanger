@@ -66,8 +66,8 @@ input {
 
 /* Popup Section */
 .popup-button-container {
-  margin-left: 965px;
-  margin-top: 85px;
+  margin-inline: 67.5vw;
+  margin-top: 12vh;
   position: relative;
 }
 
@@ -76,10 +76,10 @@ input {
   padding: 12px;
   color: #fff;
   background-color: #333;
-  display: block;
-  border-radius: 50%;
+  border-radius: 100px;
   height: 65px;
   width: 65px;
+  display: block;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
