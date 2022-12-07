@@ -24,10 +24,10 @@ input {
   display: block;
   margin: 0 auto;
   position: absolute;
-  top: 15%;
-  bottom: 15%;
-  left: 30%;
-  right: 30%;
+  width: 40vw;
+  height: 57vh;
+  margin-inline: 30vw;
+  margin-top: 5vh;
 }
 
 .amount-container {
